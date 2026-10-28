@@ -77,11 +77,11 @@ index = '''<!doctype html>
 print(f'Generated index and {len(publications)} reading pages.')
 
 base = 'https://suleynanauir.github.io/minghao-li-publications/'
-section = ['## 在线阅读链接', '', f'[访问论文库]({base}) · [GitHub 仓库](https://github.com/SuleynanAuir/minghao-li-publications)', '', '以下链接直接打开全屏阅读页；旧长链接会自动跳转。纯文本清单：[paper-links.txt](paper-links.txt)。', '']
+section = ['## Read Online', '', f'[Browse the Library]({base}) · [GitHub Repository](https://github.com/SuleynanAuir/minghao-li-publications)', '', 'Each link opens a dedicated full-page PDF reader. Previously shared long reader URLs redirect to the corresponding short URL. Plain-text link list: [paper-links.txt](paper-links.txt).', '']
 plain = ['Minghao Li | Publications', base, '']
 number = 0
-for category, label in [('research', '论文与研究文档'), ('demo', '演示与汇报文档')]:
-    section += ['### ' + label, '', '| 序号 | 文档 | 阅读链接 |', '| --- | --- | --- |']
+for category, label in [('research', 'Research Papers and Documents'), ('demo', 'Presentations and Reports')]:
+    section += ['### ' + label, '', '| No. | Document | Read Online |', '| --- | --- | --- |']
     plain += [label, '']
     for item in publications:
         if item['category'] != category:
@@ -93,7 +93,7 @@ for category, label in [('research', '论文与研究文档'), ('demo', '演示�
     section += ['']
 readme = ROOT / 'README.md'
 text = readme.read_text()
-start = text.index('## 在线阅读链接')
-end = text.index('## 网站说明', start)
+start = text.index('## Read Online')
+end = text.index('## How the Library Works', start)
 readme.write_text(text[:start] + '\n'.join(section) + '\n' + text[end:])
 (ROOT / 'paper-links.txt').write_text('\n'.join(plain))

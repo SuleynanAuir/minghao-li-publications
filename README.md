@@ -1,14 +1,29 @@
 # Minghao Li | Publications
 
-## 在线阅读链接
+A public collection of Minghao Li's research papers, project documents, thesis material, and presentations, with direct browser-based access to every document.
 
-[访问论文库](https://suleynanauir.github.io/minghao-li-publications/) · [GitHub 仓库](https://github.com/SuleynanAuir/minghao-li-publications)
+This repository brings together written research and supporting presentations in one searchable library. It is designed to make the materials easy to browse, review, and share with researchers, collaborators, and readers interested in the underlying projects. Each document has a short, dedicated reading URL that can be included in a CV, portfolio, project page, or email.
 
-以下链接直接打开全屏阅读页；旧长链接会自动跳转。纯文本清单：[paper-links.txt](paper-links.txt)。
+The current collection contains **21 documents: 16 research papers and documents, and 5 presentations and reports**. Topics represented in the collection include machine learning for medical diagnosis, multimodal hateful-meme detection, 3D and 4D reconstruction, Gaussian representations, mathematical modeling, optimization, and economic and customer-data analysis. The library also includes project demonstrations and an internship report. Entries include different document types and stages of work; inclusion here does not imply peer-reviewed publication.
 
-### 论文与研究文档
+### Features
 
-| 序号 | 文档 | 阅读链接 |
+- **Direct online reading:** open a document in a full-page reader without navigating a repository file listing.
+- **Short, shareable URLs:** use memorable paths such as `/peanut/`, `/nexus/`, and `/4d-rigging/`.
+- **Searchable catalog:** find documents by title on the library homepage.
+- **Preserved document titles:** short filenames keep URLs concise while the catalog retains descriptive titles.
+- **Compatibility with earlier reader links:** previously shared long HTML addresses redirect to the new short pages.
+- **Simple static hosting:** HTML, CSS, JavaScript, and PDF files are served through GitHub Pages, with no backend service or external CDN dependencies.
+
+## Read Online
+
+[Browse the Library](https://suleynanauir.github.io/minghao-li-publications/) · [GitHub Repository](https://github.com/SuleynanAuir/minghao-li-publications)
+
+Each link opens a dedicated full-page PDF reader. Previously shared long reader URLs redirect to the corresponding short URL. Plain-text link list: [paper-links.txt](paper-links.txt).
+
+### Research Papers and Documents
+
+| No. | Document | Read Online |
 | --- | --- | --- |
 | 1 | A Unified Model for Intelligent Diagnosis-Synergizing Machine Learning and Reinforcement Learning | [ai-diagnosis](https://suleynanauir.github.io/minghao-li-publications/ai-diagnosis/) |
 | 2 | A co-deployment strategy of decoy bombs based on geometric field of view masking and intelligent optimization | [decoy-strategy](https://suleynanauir.github.io/minghao-li-publications/decoy-strategy/) |
@@ -27,9 +42,9 @@
 | 15 | Unified Automatic Rigging and 4D Gaussian Reconstruction in Robust Structure partial thesis | [4d-thesis](https://suleynanauir.github.io/minghao-li-publications/4d-thesis/) |
 | 16 | Unveiling the Timeworn Scars and Knowledge of Stairs | [stairs](https://suleynanauir.github.io/minghao-li-publications/stairs/) |
 
-### 演示与汇报文档
+### Presentations and Reports
 
-| 序号 | 文档 | 阅读链接 |
+| No. | Document | Read Online |
 | --- | --- | --- |
 | 17 | E Deformable Gaussians General | [deformable-gaussians](https://suleynanauir.github.io/minghao-li-publications/deformable-gaussians/) |
 | 18 | FYP IncPoseFree meeting | [incposefree](https://suleynanauir.github.io/minghao-li-publications/incposefree/) |
@@ -37,37 +52,82 @@
 | 20 | Peanut demo | [peanut-demo](https://suleynanauir.github.io/minghao-li-publications/peanut-demo/) |
 | 21 | internship report demo | [internship](https://suleynanauir.github.io/minghao-li-publications/internship/) |
 
-## 网站说明
+## How the Library Works
 
-纯静态 PDF 文档库，可部署到 GitHub Pages。无需后端、npm 或外部 CDN。
+The homepage lists the documents and provides title-based filtering. Each document opens on its own reading page, where an `iframe` fills the browser viewport and displays the PDF using the browser's built-in viewer. Page navigation, zoom, and in-document search depend on the capabilities of that viewer.
 
-- `index.html`：文档目录，支持标题搜索。
-- `peanut/`、`nexus/` 等短目录：独立全屏阅读页，可直接分享。
-- `readers/`：旧长地址的跳转页，保留已分享链接的可用性。
-- `publications.json`：文档标题、简短标识、PDF 路径和旧地址的映射。
-- `additional-backup/`：原始 PDF（包括 `demo/` 子目录）。
+Visitors generally do not need to save a file manually or open a separate application. PDF data still needs to be transferred to the browser, and larger documents may take longer to load. Browser download preferences and some mobile browsers can prevent embedded viewing; each reader includes a fallback link to open the PDF directly. Full-page reading refers to filling the webpage viewport, rather than automatically activating the browser's fullscreen mode.
 
-## 发布到 GitHub Pages
+## Repository Structure
 
-1. 使用 Git 或 GitHub Desktop 将本目录的内容提交到你的 GitHub 仓库，确保 `index.html` 位于仓库根目录，PDF 和 `output/pdf/` 也需要提交。部分文件超过网页上传限制，请勿使用 GitHub 网页逐个上传。
-2. 仓库 **Settings → Pages → Build and deployment**，选择 **Deploy from a branch**，选择 `main` 分支和 **/(root)**，保存。
-3. 使用 GitHub Pages 给出的站点地址。项目站点通常为 `https://你的用户名.github.io/仓库名/`。
-4. 在目录中打开文档，将地址栏中的短地址（如 `peanut/`）发给访问者。
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Generated document catalog and entry point for the website. |
+| `style.css` / `search.js` | Catalog styling and title search. |
+| `publications.json` | Document metadata, short identifiers, PDF paths, categories, and legacy reader filenames. |
+| `<id>/index.html` | Generated full-page reader, such as `peanut/index.html`. |
+| `readers/` | Redirect pages for previously shared long reader URLs. |
+| `additional-backup/` | Research PDFs and locally retained originals. |
+| `additional-backup/demo/` | Presentation PDFs and locally retained originals. |
+| `output/pdf/` | Optimized web copies used for selected larger documents. |
+| `scripts/build.py` | Standard-library Python generator for the catalog, readers, redirects, and link lists. |
+| `paper-links.txt` | Document titles and complete reading URLs in a copyable plain-text format. |
+| `.nojekyll` | Keeps the site suitable for direct static-file publication. |
 
-官方说明：https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## Update the Collection
 
-`peanut.pdf` 原件约 113.8 MiB，超过 GitHub 的 100 MiB 单文件限制，已通过 `.gitignore` 保留在本地而不提交。阅读页使用 `output/pdf/` 中约 1.4 MiB 的网页副本（图片降采样至 180 dpi；保留文本及全部 15 页）。另有三份大型演示文档使用网页压缩副本，详见下文；其他 PDF 使用原件。更新该原件时，也需要重新生成网页副本；不要强制提交超限原件。
+1. Add a PDF with a concise filename to `additional-backup/` or its `demo/` subdirectory.
+2. Add or update its entry in `publications.json` using the fields below.
+3. If the document has an optimized web copy, update that copy as well.
+4. Run the generator from the repository root:
 
-## 添加或替换 PDF
+   ```sh
+   python3 scripts/build.py
+   ```
 
-将短文件名的 PDF 放入 `additional-backup/`，并在 `publications.json` 中添加或更新记录。`id` 用作阅读页短地址，`title` 保留完整标题，`pdf` 指向文件，`legacy` 指定旧阅读页名，`category` 为 `research` 或 `demo`。
+5. Review and commit the PDF, metadata, generated pages, README link tables, and `paper-links.txt`.
 
-运行 `python3 scripts/build.py`，会同步生成目录、短阅读页、旧地址跳转、README 链接表和 `paper-links.txt`。提交所有相关文件；保持 `id` 不变即可保持分享链接不变。原始 PDF 文件地址已随重命名改变，兼容跳转仅针对之前分享的 HTML 阅读页。
+| Field | Meaning |
+| --- | --- |
+| `id` | Unique URL-safe identifier, such as `peanut`; determines the reading URL. |
+| `title` | Full display title shown in the catalog and link lists. |
+| `pdf` | PDF path relative to the repository root. |
+| `legacy` | Filename of the compatibility page under `readers/`; use a unique filename for each entry. |
+| `category` | `research` for research documents or `demo` for presentations and reports. |
 
-## 阅读行为
+Keep an existing `id` unchanged to preserve its short reading URL. The generator prefers a matching file under `output/pdf/` when one exists, so replacing only the local original will not update the published web copy. Removing a metadata entry does not automatically delete previously generated pages; remove obsolete pages explicitly when retiring a document.
 
-阅读页用 iframe 调用浏览器内置 PDF 阅读器，翻页、缩放、搜索能力由访问者的浏览器提供。网站不会主动触发下载，但 iframe 无法强制覆盖浏览器的下载偏好；部分移动浏览器也可能无法完整嵌入预览。阅读页右下角提供“无法显示？”入口，可直接打开 PDF。
+The generator updates the **Read Online** section of this README and the plain-text link list in English. The introductory and maintenance sections are maintained separately. Legacy compatibility applies to the old HTML reader URLs; direct PDF URLs change when the corresponding PDF is renamed.
 
-在线阅读仍需要传输 PDF 数据，但通常无需手动下载、保存并用其他应用打开。较大文件首次加载可能较慢。
+## Optimized PDF Copies
 
-为优化加载，`demo/nexus-demo.pdf`、`demo/peanut-demo.pdf`、`demo/internship.pdf` 同样使用 `output/pdf/demo/` 下的网页压缩副本（NEXUS 图片 120 dpi，另外两份 180 dpi）。原件保留本地并忽略提交。替换原件后应同时更新相应网页副本。
+Selected large documents use smaller web copies to improve loading times. Their original files are retained locally and excluded from Git through `.gitignore`; those originals are not included in a fresh clone.
+
+| Web copy | Image resolution used for optimization |
+| --- | --- |
+| `output/pdf/peanut.pdf` | 180 dpi |
+| `output/pdf/demo/nexus-demo.pdf` | 120 dpi |
+| `output/pdf/demo/peanut-demo.pdf` | 180 dpi |
+| `output/pdf/demo/internship.pdf` | 180 dpi |
+
+Optimization reduces image resolution while retaining the document's pages and text. The remaining documents are served from `additional-backup/`. Maintain both the original and its web copy when updating an optimized document.
+
+## GitHub Pages Deployment
+
+The live library is hosted at [suleynanauir.github.io/minghao-li-publications](https://suleynanauir.github.io/minghao-li-publications/).
+
+The repository publishes the root directory of the `main` branch through GitHub Pages. Generated HTML files and the PDFs they reference must be committed; the Python generator is run locally before publication. No Node.js installation, package manager, or application server is required.
+
+To configure an equivalent deployment, open **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, and select **main** with **/(root)**. See the [GitHub Pages publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for configuration details.
+
+For a local preview, serve the repository root:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/` in a browser. Relative document paths support both local previews and the GitHub Pages project URL.
+
+## Sharing and Referencing
+
+Use the dedicated short reader URL when sharing a document. A complete list is available in [paper-links.txt](paper-links.txt), and the catalog above provides clickable links for every entry. For academic references, use the authors, title, date, and publication information stated in the individual document rather than inferring publication details from its repository filename.

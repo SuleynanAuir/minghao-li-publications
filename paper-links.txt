@@ -1,7 +1,7 @@
 Minghao Li | Publications
 https://suleynanauir.github.io/minghao-li-publications/
 
-论文与研究文档
+Research Papers and Documents
 
 01. A Unified Model for Intelligent Diagnosis-Synergizing Machine Learning and Reinforcement Learning
 https://suleynanauir.github.io/minghao-li-publications/ai-diagnosis/
@@ -51,7 +51,7 @@ https://suleynanauir.github.io/minghao-li-publications/4d-thesis/
 16. Unveiling the Timeworn Scars and Knowledge of Stairs
 https://suleynanauir.github.io/minghao-li-publications/stairs/
 
-演示与汇报文档
+Presentations and Reports
 
 17. E Deformable Gaussians General
 https://suleynanauir.github.io/minghao-li-publications/deformable-gaussians/
