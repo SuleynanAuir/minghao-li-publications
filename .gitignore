@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+# Original retained locally; the reader serves the smaller copy in output/pdf/.
+/additional-backup/PEANUT_Prompt_Enhanced_Ablation.pdf
+
+# Large demo originals are kept locally; web copies are published.
+/additional-backup/demo/NEXUS_demo.pdf
+/additional-backup/demo/Peanut_demo.pdf
+/additional-backup/demo/internship_report_demo.pdf
