@@ -2,20 +2,18 @@
 from pathlib import Path
 from html import escape
 from urllib.parse import quote
-import hashlib
-import re
+import json
 
 ROOT = Path(__file__).resolve().parent.parent
-pdfs = sorted(set((ROOT / 'additional-backup').rglob('*.pdf')) | {ROOT / 'additional-backup' / p.relative_to(ROOT / 'output/pdf') for p in (ROOT / 'output/pdf').rglob('*.pdf')})
+publications = json.loads((ROOT / 'publications.json').read_text())
+assert len({item['id'] for item in publications}) == len(publications)
 reader_dir = ROOT / 'readers'
 reader_dir.mkdir(exist_ok=True)
 cards = []
-for pdf in pdfs:
-    relative = pdf.relative_to(ROOT).as_posix()
-    title = re.sub(r'\s+', ' ', pdf.stem.replace('_', ' ')).strip()
-    slug = re.sub(r'[^a-z0-9]+', '-', pdf.stem.lower()).strip('-')
-    suffix = hashlib.sha256(relative.encode()).hexdigest()[:8]
-    name = f'{slug}-{suffix}.html'
+for item in publications:
+    pdf = ROOT / item['pdf']
+    title = item['title']
+    slug = item['id']
     web_copy = ROOT / 'output/pdf' / pdf.relative_to(ROOT / 'additional-backup')
     served_pdf = web_copy if web_copy.is_file() else pdf
     if served_pdf.stat().st_size >= 100 * 1024 * 1024:
@@ -41,10 +39,15 @@ for pdf in pdfs:
 </body>
 </html>
 '''
-    (reader_dir / name).write_text(page, encoding='utf-8')
+    destination = ROOT / slug
+    destination.mkdir(exist_ok=True)
+    (destination / 'index.html').write_text(page, encoding='utf-8')
+    target = '../' + slug + '/'
+    redirect = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><title>{safe_title}</title></head><body><a href="{target}">打开阅读页：{safe_title}</a></body></html>'''
+    (reader_dir / item['legacy']).write_text(redirect, encoding='utf-8')
     category = '演示文档' if 'demo' in pdf.relative_to(ROOT / 'additional-backup').parts[:-1] else '研究文档'
     size = served_pdf.stat().st_size / 1024 / 1024
-    cards.append(f'<li><a href="readers/{name}"><span class="meta">{category} · PDF · {size:.1f} MB</span><h2>{safe_title}</h2><span class="read">在线阅读 <span aria-hidden="true">↗</span></span></a></li>')
+    cards.append(f'<li><a href="{slug}/"><span class="meta">{category} · PDF · {size:.1f} MB</span><h2>{safe_title}</h2><span class="read">在线阅读 <span aria-hidden="true">↗</span></span></a></li>')
 
 index = '''<!doctype html>
 <html lang="zh-CN">
@@ -69,6 +72,28 @@ index = '''<!doctype html>
   <script src="search.js"></script>
 </body>
 </html>
-'''.replace('COUNT', str(len(pdfs))).replace('CARDS', '\n'.join(cards))
+'''.replace('COUNT', str(len(publications))).replace('CARDS', '\n'.join(cards))
 (ROOT / 'index.html').write_text(index, encoding='utf-8')
-print(f'Generated index and {len(pdfs)} reading pages.')
+print(f'Generated index and {len(publications)} reading pages.')
+
+base = 'https://suleynanauir.github.io/minghao-li-publications/'
+section = ['## 在线阅读链接', '', f'[访问论文库]({base}) · [GitHub 仓库](https://github.com/SuleynanAuir/minghao-li-publications)', '', '以下链接直接打开全屏阅读页；旧长链接会自动跳转。纯文本清单：[paper-links.txt](paper-links.txt)。', '']
+plain = ['Minghao Li | Publications', base, '']
+number = 0
+for category, label in [('research', '论文与研究文档'), ('demo', '演示与汇报文档')]:
+    section += ['### ' + label, '', '| 序号 | 文档 | 阅读链接 |', '| --- | --- | --- |']
+    plain += [label, '']
+    for item in publications:
+        if item['category'] != category:
+            continue
+        number += 1
+        link = base + item['id'] + '/'
+        section.append(f"| {number} | {item['title']} | [{item['id']}]({link}) |")
+        plain += [f"{number:02d}. {item['title']}", link, '']
+    section += ['']
+readme = ROOT / 'README.md'
+text = readme.read_text()
+start = text.index('## 在线阅读链接')
+end = text.index('## 网站说明', start)
+readme.write_text(text[:start] + '\n'.join(section) + '\n' + text[end:])
+(ROOT / 'paper-links.txt').write_text('\n'.join(plain))

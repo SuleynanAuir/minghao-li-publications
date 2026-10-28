@@ -1,0 +1,69 @@
+Minghao Li | Publications
+https://suleynanauir.github.io/minghao-li-publications/
+
+论文与研究文档
+
+01. A Unified Model for Intelligent Diagnosis-Synergizing Machine Learning and Reinforcement Learning
+https://suleynanauir.github.io/minghao-li-publications/ai-diagnosis/
+
+02. A co-deployment strategy of decoy bombs based on geometric field of view masking and intelligent optimization
+https://suleynanauir.github.io/minghao-li-publications/decoy-strategy/
+
+03. Clinical Brain Tumor Detection- Optimized Machine Learning Frameworks for MRI Diagnosis
+https://suleynanauir.github.io/minghao-li-publications/brain-tumor/
+
+04. Construction of Motion Simulation and Optimization Model of Bench Dragon Based on Spiral Path
+https://suleynanauir.github.io/minghao-li-publications/bench-dragon/
+
+05. Echoes of Value- How Customer Patterns Predict Profits and What the Data Say Aloud
+https://suleynanauir.github.io/minghao-li-publications/customer-value/
+
+06. Forecast and Analysis of Economic Development in the Guangdong-Hong Kong-Macao Greater Bay Area
+https://suleynanauir.github.io/minghao-li-publications/gba-economy/
+
+07. From Alignment to Reasoning in Detecting Hateful Memes
+https://suleynanauir.github.io/minghao-li-publications/hateful-memes/
+
+08. HateReasoner
+https://suleynanauir.github.io/minghao-li-publications/hatereasoner/
+
+09. Multi-level Chess Game Design
+https://suleynanauir.github.io/minghao-li-publications/chess/
+
+10. NEXUS
+https://suleynanauir.github.io/minghao-li-publications/nexus/
+
+11. NEXUS Servy
+https://suleynanauir.github.io/minghao-li-publications/nexus-survey/
+
+12. P-ADON4PDF
+https://suleynanauir.github.io/minghao-li-publications/p-adon/
+
+13. PEANUT Prompt Enhanced Ablation
+https://suleynanauir.github.io/minghao-li-publications/peanut/
+
+14. Unified Automatic Rigging and 4D Gaussian Reconstruction
+https://suleynanauir.github.io/minghao-li-publications/4d-rigging/
+
+15. Unified Automatic Rigging and 4D Gaussian Reconstruction in Robust Structure partial thesis
+https://suleynanauir.github.io/minghao-li-publications/4d-thesis/
+
+16. Unveiling the Timeworn Scars and Knowledge of Stairs
+https://suleynanauir.github.io/minghao-li-publications/stairs/
+
+演示与汇报文档
+
+17. E Deformable Gaussians General
+https://suleynanauir.github.io/minghao-li-publications/deformable-gaussians/
+
+18. FYP IncPoseFree meeting
+https://suleynanauir.github.io/minghao-li-publications/incposefree/
+
+19. NEXUS demo
+https://suleynanauir.github.io/minghao-li-publications/nexus-demo/
+
+20. Peanut demo
+https://suleynanauir.github.io/minghao-li-publications/peanut-demo/
+
+21. internship report demo
+https://suleynanauir.github.io/minghao-li-publications/internship/

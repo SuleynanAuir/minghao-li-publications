@@ -1,0 +1,149 @@
+[
+  {
+    "id": "ai-diagnosis",
+    "title": "A Unified Model for Intelligent Diagnosis-Synergizing Machine Learning and Reinforcement Learning",
+    "pdf": "additional-backup/ai-diagnosis.pdf",
+    "legacy": "a-unified-model-for-intelligent-diagnosis-synergizing-machine-learning-and-reinforcement-learning-5a1255e0.html",
+    "category": "research"
+  },
+  {
+    "id": "decoy-strategy",
+    "title": "A co-deployment strategy of decoy bombs based on geometric field of view masking and intelligent optimization",
+    "pdf": "additional-backup/decoy-strategy.pdf",
+    "legacy": "a-co-deployment-strategy-of-decoy-bombs-based-on-geometric-field-of-view-masking-and-intelligent-optimization-01fce6fe.html",
+    "category": "research"
+  },
+  {
+    "id": "brain-tumor",
+    "title": "Clinical Brain Tumor Detection- Optimized Machine Learning Frameworks for MRI Diagnosis",
+    "pdf": "additional-backup/brain-tumor.pdf",
+    "legacy": "clinical-brain-tumor-detection-optimized-machine-learning-frameworks-for-mri-diagnosis-02e05dc0.html",
+    "category": "research"
+  },
+  {
+    "id": "bench-dragon",
+    "title": "Construction of Motion Simulation and Optimization Model of Bench Dragon Based on Spiral Path",
+    "pdf": "additional-backup/bench-dragon.pdf",
+    "legacy": "construction-of-motion-simulation-and-optimization-model-of-bench-dragon-based-on-spiral-path-cf16c57e.html",
+    "category": "research"
+  },
+  {
+    "id": "customer-value",
+    "title": "Echoes of Value- How Customer Patterns Predict Profits and What the Data Say Aloud",
+    "pdf": "additional-backup/customer-value.pdf",
+    "legacy": "echoes-of-value-how-customer-patterns-predict-profits-and-what-the-data-say-aloud-c5b8daa5.html",
+    "category": "research"
+  },
+  {
+    "id": "gba-economy",
+    "title": "Forecast and Analysis of Economic Development in the Guangdong-Hong Kong-Macao Greater Bay Area",
+    "pdf": "additional-backup/gba-economy.pdf",
+    "legacy": "forecast-and-analysis-of-economic-development-in-the-guangdong-hong-kong-macao-greater-bay-area-67595f02.html",
+    "category": "research"
+  },
+  {
+    "id": "hateful-memes",
+    "title": "From Alignment to Reasoning in Detecting Hateful Memes",
+    "pdf": "additional-backup/hateful-memes.pdf",
+    "legacy": "from-alignment-to-reasoning-in-detecting-hateful-memes-95382caf.html",
+    "category": "research"
+  },
+  {
+    "id": "hatereasoner",
+    "title": "HateReasoner",
+    "pdf": "additional-backup/hatereasoner.pdf",
+    "legacy": "hatereasoner-c04bc7d3.html",
+    "category": "research"
+  },
+  {
+    "id": "chess",
+    "title": "Multi-level Chess Game Design",
+    "pdf": "additional-backup/chess.pdf",
+    "legacy": "multi-level-chess-game-design-d9cf8edc.html",
+    "category": "research"
+  },
+  {
+    "id": "nexus",
+    "title": "NEXUS",
+    "pdf": "additional-backup/nexus.pdf",
+    "legacy": "nexus-e9418630.html",
+    "category": "research"
+  },
+  {
+    "id": "nexus-survey",
+    "title": "NEXUS Servy",
+    "pdf": "additional-backup/nexus-survey.pdf",
+    "legacy": "nexus-servy-41efe828.html",
+    "category": "research"
+  },
+  {
+    "id": "p-adon",
+    "title": "P-ADON4PDF",
+    "pdf": "additional-backup/p-adon.pdf",
+    "legacy": "p-adon4pdf-ace3772e.html",
+    "category": "research"
+  },
+  {
+    "id": "peanut",
+    "title": "PEANUT Prompt Enhanced Ablation",
+    "pdf": "additional-backup/peanut.pdf",
+    "legacy": "peanut-prompt-enhanced-ablation-44e68073.html",
+    "category": "research"
+  },
+  {
+    "id": "4d-rigging",
+    "title": "Unified Automatic Rigging and 4D Gaussian Reconstruction",
+    "pdf": "additional-backup/4d-rigging.pdf",
+    "legacy": "unified-automatic-rigging-and-4d-gaussian-reconstruction-7200c6a6.html",
+    "category": "research"
+  },
+  {
+    "id": "4d-thesis",
+    "title": "Unified Automatic Rigging and 4D Gaussian Reconstruction in Robust Structure partial thesis",
+    "pdf": "additional-backup/4d-thesis.pdf",
+    "legacy": "unified-automatic-rigging-and-4d-gaussian-reconstruction-in-robust-structure-partial-thesis-94487969.html",
+    "category": "research"
+  },
+  {
+    "id": "stairs",
+    "title": "Unveiling the Timeworn Scars and Knowledge of Stairs",
+    "pdf": "additional-backup/stairs.pdf",
+    "legacy": "unveiling-the-timeworn-scars-and-knowledge-of-stairs-9b8d9e23.html",
+    "category": "research"
+  },
+  {
+    "id": "deformable-gaussians",
+    "title": "E Deformable Gaussians General",
+    "pdf": "additional-backup/demo/deformable-gaussians.pdf",
+    "legacy": "e-deformable-gaussians-general-ab165eb7.html",
+    "category": "demo"
+  },
+  {
+    "id": "incposefree",
+    "title": "FYP IncPoseFree meeting",
+    "pdf": "additional-backup/demo/incposefree.pdf",
+    "legacy": "fyp-incposefree-meeting-ffbe1fcd.html",
+    "category": "demo"
+  },
+  {
+    "id": "nexus-demo",
+    "title": "NEXUS demo",
+    "pdf": "additional-backup/demo/nexus-demo.pdf",
+    "legacy": "nexus-demo-3cf04bda.html",
+    "category": "demo"
+  },
+  {
+    "id": "peanut-demo",
+    "title": "Peanut demo",
+    "pdf": "additional-backup/demo/peanut-demo.pdf",
+    "legacy": "peanut-demo-f83ed98f.html",
+    "category": "demo"
+  },
+  {
+    "id": "internship",
+    "title": "internship report demo",
+    "pdf": "additional-backup/demo/internship.pdf",
+    "legacy": "internship-report-demo-c66344b4.html",
+    "category": "demo"
+  }
+]
